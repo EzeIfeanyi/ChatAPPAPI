@@ -34,15 +34,18 @@ return function (App $app) {
     $groupController = new GroupController($createGroupCommand, $joinGroupCommand, $logger);
     $messageController = new MessageController($sendMessageCommand, $logger);
 
-    // Define public routes (no authentication required)
-    $app->post('/register', [$userController, 'register']);
-    $app->post('/login', [$userController, 'login']);
+    // Group routes under /api/v1.0
+    $app->group('/api/v1', function ($group) use ($userController, $groupController, $messageController, $app) {
+        // Public routes (no authentication required)
+        $group->post('/register', [$userController, 'register']);
+        $group->post('/login', [$userController, 'login']);
 
-    // Define protected routes (authentication required)
-    $app->group('', function ($group) use ($groupController, $messageController) {
-        $group->post('/groups', [$groupController, 'create']);
-        $group->post('/groups/{userId}/join/{groupId}', [$groupController, 'join']);
-        $group->post('/messages', [$messageController, 'send']);
-        $group->get('/groups/{groupId}/messages', [$messageController, 'getMessages']);
-    })->add($app->getContainer()->get(AuthMiddleware::class));
+        // Protected routes (authentication required)
+        $group->group('', function ($group) use ($groupController, $messageController, $app) {
+            $group->post('/groups', [$groupController, 'create']);
+            $group->post('/groups/{userId}/join/{groupId}', [$groupController, 'join']);
+            $group->post('/messages', [$messageController, 'send']);
+            $group->get('/groups/{groupId}/messages', [$messageController, 'getMessages']);
+        })->add($app->getContainer()->get(AuthMiddleware::class));
+    });
 };
