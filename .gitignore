@@ -1,0 +1,8 @@
+# Ignore composer dependencies
+/vendor/
+
+# Ignore db file
+/database/chatapp.db
+
+# Ignore log file
+/log/app.log
