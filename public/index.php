@@ -6,6 +6,8 @@ use Slim\Factory\AppFactory;
 use DI\Container;
 use Infrastructure\Database\DatabaseConnectionInterface;
 use Infrastructure\Database\Migrations\CreateTables;
+use Presentation\Middleware\CorsMiddleware;
+use Presentation\Middleware\CspMiddleware;
 
 require dirname(__DIR__) . '/vendor/autoload.php';
 
@@ -33,6 +35,10 @@ $dependencies($container);
 // Include middleware
 $middleware = require __DIR__ . '/../app/middleware.php';
 $middleware($container);
+
+// ** Add the CORS and CSP middleware to the Slim application **
+$app->add($container->get(CorsMiddleware::class));
+$app->add($container->get(CspMiddleware::class));
 
 // Create the Slim App with the container
 $app = AppFactory::create();
