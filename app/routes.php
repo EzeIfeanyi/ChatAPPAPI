@@ -9,6 +9,7 @@ use Application\Commands\LoginUserCommand;
 use Application\Commands\CreateGroupCommand;
 use Application\Commands\JoinGroupCommand;
 use Application\Commands\SendMessageCommand;
+use Application\Queries\GetAllGroupsQuery;
 use Application\Services\GroupServiceInterface;
 use Application\Services\MessageServiceInterface;
 use Application\Services\UserServiceInterface;
@@ -27,11 +28,12 @@ return function (App $app) {
     $loginCommand = new LoginUserCommand($userService);
     $createGroupCommand = new CreateGroupCommand($groupService);
     $joinGroupCommand = new JoinGroupCommand($groupService);
+    $getAllGroupsQuery = new GetAllGroupsQuery($groupService);
     $sendMessageCommand = new SendMessageCommand($messageService);
 
     // Controllers
     $userController = new UserController($registerUserCommand, $loginCommand, $logger);
-    $groupController = new GroupController($createGroupCommand, $joinGroupCommand, $logger);
+    $groupController = new GroupController($createGroupCommand, $joinGroupCommand, $getAllGroupsQuery, $logger);
     $messageController = new MessageController($sendMessageCommand, $logger);
 
     // Group routes under /api/v1.0
@@ -42,6 +44,7 @@ return function (App $app) {
 
         // Protected routes (authentication required)
         $group->group('', function ($group) use ($groupController, $messageController, $app) {
+            $group->get('/groups', [$groupController, 'getAll']);
             $group->post('/groups', [$groupController, 'create']);
             $group->post('/groups/{userId}/join/{groupId}', [$groupController, 'join']);
             $group->post('/messages', [$messageController, 'send']);

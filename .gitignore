@@ -5,4 +5,5 @@
 /database/chatapp.db
 
 # Ignore log file
-/log/
+/log
+/log/app.log

@@ -93,4 +93,19 @@ class GroupService implements GroupServiceInterface {
             'user_id' => $userId,
         ]);
     }
+
+    public function getAllGroups(): array {
+        // Log the retrieval attempt
+        $this->logger->info('Fetching all groups');
+
+        // Retrieve all groups from the repository
+        $groups = $this->groupRepository->findAll();
+
+        // Log the successful retrieval of groups
+        $this->logger->info('Fetched all groups successfully', [
+            'count' => count($groups)
+        ]);
+
+        return $groups;
+    }
 }
