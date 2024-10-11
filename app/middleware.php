@@ -1,9 +1,9 @@
 <?php
 
-use App\Middleware\CspMiddleware;
 use DI\Container;
 use Presentation\Middleware\AuthMiddleware;
 use Presentation\Middleware\CorsMiddleware;
+use Presentation\Middleware\CspMiddleware;
 
 return function (Container $container) {
     $settings = $container->get('settings');

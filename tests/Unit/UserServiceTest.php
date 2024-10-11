@@ -25,8 +25,8 @@ class UserServiceTest extends TestCase
 
         // JWT settings
         $this->jwtSettings = [
-            'issuer' => 'localhost',
-            'secret' => 'secret',
+            'issuer' => 'chat',
+            'secret' => 'this is the secret you need for the app',
             'algorithm' => 'HS256',
             'expiration_time' => time() + 3600,
             'issued_at' => time()
