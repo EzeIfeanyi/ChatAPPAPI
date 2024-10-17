@@ -116,7 +116,8 @@ class GroupController {
             // Log successful fetch
             $this->logger->info('Successfully fetched all groups', ['count' => count($groups)]);
 
-            $apiResponse = new ApiResponse('success', $groups, 'Groups fetched successfully');
+            $groupsArray = array_map(fn($group) => $group->toArray(), $groups);
+            $apiResponse = new ApiResponse('success', $groupsArray, 'Groups fetched successfully');
             $response->getBody()->write($apiResponse->toJson());
             return $response->withStatus(200)->withHeader('Content-Type', 'application/json');
         } catch (\Exception $e) {

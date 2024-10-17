@@ -22,4 +22,11 @@ class Group {
     public function getName() {
         return $this->name;
     }
+
+    public function toArray(): array {
+        return [
+            'id' => $this->getId(),
+            'group_id' => $this->getName(),
+        ];
+    } 
 }
