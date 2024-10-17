@@ -97,11 +97,13 @@ All responses from the API adhere to the following structure:
     {
         "status": "success",
         "data": {
-            "token": "string" // JWT token for authentication
+            "token": "string" // Use this token to make requests. It expires in 1 hour
         },
         "message": "User logged in successfully."
     }
     ```
+
+    Use the bearer token to make requests for Group and Message management.
 
     -   **Error Response**:
 
