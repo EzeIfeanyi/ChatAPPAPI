@@ -21,9 +21,6 @@ $container->set('settings', $settings);
 // Set the container to the Slim app
 AppFactory::setContainer($container);
 
-// Path to the SQLite database file
-$dbFile = dirname(__DIR__) . '/database/chatapp.db';
-
 // Include repositories
 $repositories = require __DIR__ . '/../app/repositories.php';
 $repositories($container);
