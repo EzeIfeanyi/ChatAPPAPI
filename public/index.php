@@ -36,12 +36,12 @@ $dependencies($container);
 $middleware = require __DIR__ . '/../app/middleware.php';
 $middleware($container);
 
+// Create the Slim App with the container
+$app = AppFactory::create();
+
 // ** Add the CORS and CSP middleware to the Slim application **
 $app->add($container->get(CorsMiddleware::class));
 $app->add($container->get(CspMiddleware::class));
-
-// Create the Slim App with the container
-$app = AppFactory::create();
 
 // Include routes
 $routes = require __DIR__ . '/../app/routes.php';
