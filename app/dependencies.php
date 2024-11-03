@@ -7,12 +7,12 @@ use Application\Services\GroupServiceInterface;
 use Application\Services\MessageService;
 use Application\Services\MessageServiceInterface;
 use Application\Services\UserServiceInterface;
-use Domain\Repositories\GroupMemberRepositoryInterface;
-use Domain\Repositories\UserRepositoryInterface;
+use Application\Repositories\GroupMemberRepositoryInterface;
+use Application\Repositories\UserRepositoryInterface;
 use Infrastructure\Database\DatabaseConnectionInterface;
 use Infrastructure\Database\SQLiteConnection;
-use Domain\Repositories\GroupRepositoryInterface;
-use Domain\Repositories\MessageRepositoryInterface;
+use Application\Repositories\GroupRepositoryInterface;
+use Application\Repositories\MessageRepositoryInterface;
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
 

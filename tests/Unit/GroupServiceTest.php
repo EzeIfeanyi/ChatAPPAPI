@@ -4,8 +4,8 @@ namespace Tests\Unit;
 
 use PHPUnit\Framework\TestCase;
 use Application\Services\GroupService;
-use Domain\Repositories\GroupRepositoryInterface;
-use Domain\Repositories\GroupMemberRepositoryInterface;
+use Application\Repositories\GroupRepositoryInterface;
+use Application\Repositories\GroupMemberRepositoryInterface;
 use Application\DTOs\GroupDTO;
 use Domain\Entities\Group;
 use Monolog\Logger;

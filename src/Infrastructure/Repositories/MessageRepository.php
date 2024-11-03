@@ -1,7 +1,7 @@
 <?php
 namespace Infrastructure\Repositories;
 
-use Domain\Repositories\MessageRepositoryInterface;
+use Application\Repositories\MessageRepositoryInterface;
 use Domain\Entities\Message;
 use PDO;
 

@@ -3,7 +3,7 @@
 namespace Application\Services;
 
 use Domain\Entities\User;
-use Domain\Repositories\UserRepositoryInterface;
+use Application\Repositories\UserRepositoryInterface;
 use Application\DTOs\UserDTO;
 use Application\Validators\UserValidator;
 use Firebase\JWT\JWT;

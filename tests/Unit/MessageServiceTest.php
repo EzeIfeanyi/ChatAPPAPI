@@ -4,8 +4,8 @@ namespace Tests\Unit;
 
 use PHPUnit\Framework\TestCase;
 use Application\Services\MessageService;
-use Domain\Repositories\MessageRepositoryInterface;
-use Domain\Repositories\GroupMemberRepositoryInterface;
+use Application\Repositories\MessageRepositoryInterface;
+use Application\Repositories\GroupMemberRepositoryInterface;
 use Application\DTOs\MessageDTO;
 use Domain\Entities\Message;
 use Monolog\Logger;

@@ -3,8 +3,8 @@
 namespace Application\Services;
 
 use Domain\Entities\Group;
-use Domain\Repositories\GroupRepositoryInterface;
-use Domain\Repositories\GroupMemberRepositoryInterface;
+use Application\Repositories\GroupRepositoryInterface;
+use Application\Repositories\GroupMemberRepositoryInterface;
 use Application\DTOs\GroupDTO;
 use Application\Validators\GroupValidator;
 use Monolog\Logger;

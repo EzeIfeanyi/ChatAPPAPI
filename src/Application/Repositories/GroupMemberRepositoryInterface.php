@@ -1,5 +1,5 @@
 <?php
-namespace Domain\Repositories;
+namespace Application\Repositories;
 
 use Domain\Entities\GroupMember;
 

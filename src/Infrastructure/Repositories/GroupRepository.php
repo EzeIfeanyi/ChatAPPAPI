@@ -3,7 +3,7 @@
 namespace Infrastructure\Repositories;
 
 use Domain\Entities\Group;
-use Domain\Repositories\GroupRepositoryInterface;
+use Application\Repositories\GroupRepositoryInterface;
 use PDO;
 
 class GroupRepository implements GroupRepositoryInterface

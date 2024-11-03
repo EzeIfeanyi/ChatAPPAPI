@@ -1,10 +1,10 @@
 <?php
 
 use DI\Container;
-use Domain\Repositories\UserRepositoryInterface;
-use Domain\Repositories\GroupRepositoryInterface;
-use Domain\Repositories\GroupMemberRepositoryInterface;
-use Domain\Repositories\MessageRepositoryInterface;
+use Application\Repositories\UserRepositoryInterface;
+use Application\Repositories\GroupRepositoryInterface;
+use Application\Repositories\GroupMemberRepositoryInterface;
+use Application\Repositories\MessageRepositoryInterface;
 use Infrastructure\Repositories\UserRepository;
 use Infrastructure\Repositories\GroupRepository;
 use Infrastructure\Repositories\GroupMemberRepository;

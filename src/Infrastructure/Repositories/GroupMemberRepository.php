@@ -1,7 +1,7 @@
 <?php
 namespace Infrastructure\Repositories;
 
-use Domain\Repositories\GroupMemberRepositoryInterface;
+use Application\Repositories\GroupMemberRepositoryInterface;
 use PDO;
 
 class GroupMemberRepository implements GroupMemberRepositoryInterface {

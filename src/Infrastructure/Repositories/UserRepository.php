@@ -3,7 +3,7 @@
 namespace Infrastructure\Repositories;
 
 use Domain\Entities\User;
-use Domain\Repositories\UserRepositoryInterface;
+use Application\Repositories\UserRepositoryInterface;
 use PDO;
 
 class UserRepository implements UserRepositoryInterface {

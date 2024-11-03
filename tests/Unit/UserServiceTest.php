@@ -4,7 +4,7 @@ namespace Tests\Unit;
 
 use PHPUnit\Framework\TestCase;
 use Application\Services\UserService;
-use Domain\Repositories\UserRepositoryInterface;
+use Application\Repositories\UserRepositoryInterface;
 use Application\DTOs\UserDTO;
 use Firebase\JWT\JWT;
 use Domain\Entities\User;

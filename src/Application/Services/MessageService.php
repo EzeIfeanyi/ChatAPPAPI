@@ -2,11 +2,11 @@
 
 namespace Application\Services;
 
-use Domain\Repositories\MessageRepositoryInterface;
+use Application\Repositories\MessageRepositoryInterface;
 use Domain\Entities\Message;
 use Application\DTOs\MessageDTO;
 use Application\Validators\MessageValidator;
-use Domain\Repositories\GroupMemberRepositoryInterface;
+use Application\Repositories\GroupMemberRepositoryInterface;
 use Monolog\Logger;
 
 class MessageService implements MessageServiceInterface {
